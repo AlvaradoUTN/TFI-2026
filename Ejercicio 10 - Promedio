@@ -1,0 +1,37 @@
+Algoritmo CalcularPromedioFluido
+    Definir numero, suma Como Real
+    Definir contador Como Entero
+    Definir promedio Como Real
+    
+    suma <- 0
+    contador <- 0
+    
+    Escribir "Ingrese 10 números. Si ingresa un negativo, se le pedirá corregirlo:"
+    Escribir ""
+    
+    // Se genera un bucle que solamente sume al contador de cuando el numero sea positivo
+    Mientras contador < 10 Hacer
+        Escribir "Ingrese un número (", contador + 1, "/10):"
+        Leer numero
+        
+        Si numero >= 0 Entonces
+            // Si es válido, lo acumulamos y pasamos al siguiente
+            suma <- suma + numero
+            contador <- contador + 1
+        Sino
+            // Si es negativo, avisamos pero NO sumamos al contador para mantener los datos previamente ingresados
+            Escribir "Error: Los números negativos no son válidos para el promedio. Intente de nuevo."
+            Escribir ""
+        FinSi
+    FinMientras
+    
+    // Una vez finalizado el bucle, nos quedamos unicamente con los numeros positivos ingresados
+    promedio <- suma / contador
+    
+    Escribir "------------------------------------------------"
+    Escribir "Cantidad de números válidos ingresados: ", contador
+    Escribir "Suma total: ", suma
+    Escribir "Promedio final: ", promedio
+    Escribir "------------------------------------------------"
+    
+FinAlgoritmo
