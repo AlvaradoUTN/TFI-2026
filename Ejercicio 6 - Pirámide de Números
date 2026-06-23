@@ -1,0 +1,33 @@
+Algoritmo PiramideCentradaPerfecta
+    Definir altura, fila, columna, espacio Como Entero
+
+  // Ingresamos la altura de la piramide
+    
+Repetir
+        Escribir "Ingrese la altura deseada para la piramide (Mínimo 1):"
+        Leer altura
+        
+        Si altura < 1 Entonces
+            Escribir "Cantidad no válida. Intente de nuevo."
+        FinSi
+    Hasta Que altura >= 1
+    
+  // El ciclo Para sigue acá abajo con la seguridad de que altura es 1 o más
+
+  // Recorremos cada uno de los escalones
+    
+    Para fila <- 1 Hasta altura Hacer
+        
+        // Imprimimos los espacios iniciales necesarios para centrar la fila actual
+        Para espacio <- 1 Hasta (altura - fila) Hacer
+            Escribir Sin Saltar " " 
+        FinPara
+        
+        // Ahora imprimimos la secuencia de números de la fila, separados por un espacio
+        Para columna <- 1 Hasta fila Hacer
+            Escribir Sin Saltar columna, " "
+        FinPara
+        
+        Escribir "" // Hacemos un salto de línea para el siguiente escalón
+    FinPara
+FinAlgoritmo
