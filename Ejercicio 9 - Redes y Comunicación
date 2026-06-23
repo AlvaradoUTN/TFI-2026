@@ -1,0 +1,42 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+
+# 1. Creamos el grafo dirigido
+G = nx.DiGraph()
+
+# 2. Definir los 8 nodos (del 1 al 8)
+nodos = list(range(1, 9))
+G.add_nodes_from(nodos)
+
+# 3. Definir las conexiones (Relación direccionada)
+# Cada nodo 'i' se conecta exactamente a otros 2 nodos de forma saliente.
+# Usamos aritmética modular (operador %) para que el ciclo cierre correctamente.
+for i in range(1, 9):
+    # Conexión al nodo siguiente inmediato (Forma un anillo principal)
+    siguiente_1 = i + 1 if i < 8 else 1
+    
+    # Conexión saltando un nodo (Forma el segundo camino directo obligatorio)
+    siguiente_2 = i + 2 if i < 7 else (1 if i == 7 else 2)
+    
+    # Añadir las aristas dirigidas al grafo
+    G.add_edge(i, siguiente_1)
+    G.add_edge(i, siguiente_2)
+
+# --- Realizamos una verificacion sobre la consola ---
+print("Estructura de la red (Lista de adyacencia):")
+for nodo, vecinos in G.adjacency():
+    print(f"Nodo {nodo} se comunica directamente con: {list(vecinos.keys())}")
+
+# --- Dibujamos el grafico para verlo de manera visual ---
+plt.figure(figsize=(8, 8))
+# Posicionar los nodos en un círculo perfecto para apreciar la simetría
+pos = nx.circular_layout(G)
+
+# Dibujar componentes del grafo
+nx.draw_networkx_nodes(G, pos, node_size=700, node_color='teal')
+nx.draw_networkx_labels(G, pos, font_size=12, font_color='white', font_weight='bold')
+nx.draw_networkx_edges(G, pos, arrowstyle='->', arrowsize=20, edge_color='gray', connectionstyle='arc3,rad=0.1')
+
+plt.title("Red Direccionada de 8 Nodos (Grado de salida = 2)", fontsize=14)
+plt.axis('off')
+plt.show()
