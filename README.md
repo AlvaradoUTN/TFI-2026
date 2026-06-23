@@ -15,6 +15,7 @@ Python
 
 ## Descripción
 Trabajo Final Integrador de la materia Programación del 1er Cuatrimestre del año 2026. Consiste en la resolución de 10 ejercicios de programación bajo los lenguajes de PSeInt y Python.
+
 Ejercicios desarrollados en PSeInt:
 - Contador de vocales
 - Invertir cadena
