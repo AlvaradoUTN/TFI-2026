@@ -1,0 +1,27 @@
+Algoritmo TabladeMultiplicar
+	
+	// Declaración de variables
+    Definir n, resultado Como Entero
+    Definir i Como Entero	
+
+  // Solicitamos el numero de la tabla de multiplicar que desea el usuario
+
+    Escribir "Ingrese el numero de la tabla de multiplicacion que desea"
+    Leer n
+	
+    Escribir ""
+    Escribir "Tabla del ", n, ":"
+    Escribir "---------------------------------------"
+	
+    // Utilizamos un bucle para mostrar la tabla del numero ingresado anteriormente
+
+    Para i <- 1 Hasta 20 Con Paso 1 Hacer
+		
+        resultado <- n * i
+        Escribir n, " x ", i, " = ", resultado
+		
+    FinPara
+	
+    Escribir "======================================="
+	
+FinAlgoritmo
