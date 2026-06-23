@@ -1,0 +1,47 @@
+Algoritmo AdivinarNumero
+    Definir numero_secreto, intento, diferencia, cantidad_intentos Como Entero
+
+    //Generamos el numero al azar
+    numero_secreto <- Azar(25) + 1
+    cantidad_intentos <- 0
+    
+    Escribir "--------------------------------"
+    Escribir "JUEGO DE ADIVINANZA"
+    Escribir "--------------------------------"
+    Escribir "Debe adivinar un numero entre 1 y 25."
+    
+    Repetir
+        
+        // Agregamos un bucle para que el usuario deba ingresar un numero que si o si este entre 1 y 25
+        Repetir
+            Escribir ""
+            Escribir "Ingrese un numero (entre 1 y 25):"
+            Leer intento
+            
+            Si intento < 1 O intento > 25 Entonces
+                Escribir "Error: El numero debe estar estrictamente entre 1 y 25. Intente de nuevo."
+            FinSi
+        Hasta Que intento >= 1 Y intento <= 25
+        
+        // Una vez que el número es válido, recién ahí lo tomamos como un intento y tomamos como un intento
+        cantidad_intentos <- cantidad_intentos + 1
+        
+        diferencia <- Abs(numero_secreto - intento)
+        
+        Si intento = numero_secreto Entonces
+            Escribir "Correcto. Adivinaste el numero."
+        Sino
+            Si diferencia <= 3 Entonces
+                Escribir "Estas cerca."
+            Sino
+                Escribir "Estas alejado."
+            FinSi
+        FinSi
+        
+    Hasta Que intento = numero_secreto
+    
+    Escribir ""
+    Escribir "Numero secreto: ", numero_secreto
+    Escribir "Cantidad de intentos: ", cantidad_intentos
+    
+FinAlgoritmo
