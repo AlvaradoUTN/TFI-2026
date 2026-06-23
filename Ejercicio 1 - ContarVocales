@@ -1,0 +1,37 @@
+Algoritmo Contadordevocales
+		
+		// Definir variables
+		Definir frase Como Caracter
+		Definir i Como Entero
+		Definir contador Como Entero
+		Definir letra Como Caracter
+		Definir fraseMinuscula Como Caracter
+		
+		contador <- 0
+		
+		// Solicitar al usuario la entrada
+		Escribir "----------------------------------"
+    Escribir "Ingrese la frase que sea contabilizar:"
+	  Escribir "----------------------------------"
+		Leer frase
+		
+		// Convertir toda la frase a mayúsculas para facilitar la comparación
+		fraseMinuscula <- Mayusculas(frase)
+
+		i <- 1
+		Mientras i <= Longitud(frase) Hacer
+			letra <- SubCadena(fraseMinuscula, i, i)
+
+		// Verificar si es una vocal
+			Si letra = "A" O letra = "E" O letra = "I" O letra = "O" O letra = "U" Entonces
+				contador <- contador + 1
+			FinSi
+			
+			
+		i <- i + 1
+		FinMientras
+		
+		// Mostrar el resultado
+		Escribir "La frase ", frase, " contiene ", contador, " vocal(es)."
+		
+FinAlgoritmo
