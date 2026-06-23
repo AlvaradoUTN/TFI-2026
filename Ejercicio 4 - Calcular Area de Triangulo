@@ -1,0 +1,35 @@
+Algoritmo AreaTriangulo
+	
+    // Definir variables
+    Definir base, altura, area Como Real
+    
+    // Solicitar al usuario ingrese la base del triangulo a calcular
+    Escribir "------------------------------"
+    Escribir "Ingrese debajo la base del triángulo:"
+    Escribir "------------------------------"
+    Leer base
+
+    // Solicitar al usuario ingrese la altura del triangulo a calcular
+    Escribir " "
+    Escribir "------------------------------"
+    Escribir "Ingrese debajo la altura del triángulo:"
+    Escribir "------------------------------"
+    Leer altura
+    
+    // Validamos que los valores sean positivos
+    
+    Mientras base <= 0 O altura <= 0 Hacer
+        Escribir "Error: La base y la altura deben ser mayores a 0."
+        Escribir "Ingrese la base del triángulo:"
+        Leer base
+        Escribir "Ingrese la altura del triángulo:"
+        Leer altura
+    FinMientras
+	
+    // Realizamos el cálculo del área mediante el producto de la base y la altura, dividido por 2
+    area <- (base * altura) / 2
+    
+    // Por ultimo mostramos el resultado
+    Escribir "El área del triángulo es: ", area
+	
+FinAlgoritmo
