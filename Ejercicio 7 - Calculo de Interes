@@ -1,0 +1,44 @@
+Algoritmo InteresSimple
+    Definir capital Como Real
+    Definir tiempo Como Real // Lo definimos Real para que la consola no explote al tipear un decimal
+    Definir tasa Como Real
+    Definir interes Como Real
+    Definir totalMonto Como Real
+
+    tasa <- 0.21
+
+    Escribir "La tasa de interes es del: ", (tasa * 100), "%"
+    Escribir "--------------------------------------------"
+    
+    // Validamos el capital (Mayor a 0)
+    Repetir
+        Escribir "Ingrese el capital (Mayor a 0): "
+        Leer capital
+        
+        Si capital <= 0 Entonces
+            Escribir "El capital no puede ser 0 ni negativo. Intente de nuevo."
+            Escribir ""
+        FinSi
+    Hasta Que capital > 0
+    
+    // Validamos el tiempo (Mayor a 0 y que no pueda ser un numero decimal)
+    Repetir
+        Escribir "Ingrese el tiempo que desea calcular (El mismo debe ser un numero entero mayor a 0): "
+        Leer tiempo
+        
+        // Verificamos si es menor/igual a cero O si tiene decimales comparándolo con su entero (Trunc)
+        Si tiempo <= 0 O tiempo != Trunc(tiempo) Entonces
+            Escribir "Error: El tiempo debe ser un numero ENTERO y mayor a 0. Intente de nuevo."
+            Escribir ""
+        FinSi
+    Hasta Que tiempo > 0 Y tiempo = Trunc(tiempo)
+
+    // Realizamos los cálculos con la seguridad de que los datos son perfectos
+    interes <- capital * tasa * tiempo
+    totalMonto <- capital + interes
+
+    // Mostramos el resultado en pantalla
+    Escribir ""
+    Escribir "Con una tasa del ", (tasa * 100), "%, su capital de ", capital, "$ sumado al interes ganado (", interes, "$),"
+    Escribir "nos da un total de ", totalMonto, "$ en un plazo de ", tiempo, " meses."
+FinAlgoritmo
